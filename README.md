@@ -1,9 +1,8 @@
 # Django 
 
-- **Override User Model** - https://github.com/BTU-Women-AI-Python-course/Btu_Python_Lecture_15/blob/main/override_user_model.md
-- **User Registration** - https://github.com/BTU-Women-AI-Python-course/Btu_Python_Lecture_15/blob/main/user_registration.md
-- **User Login and Logout** - https://github.com/BTU-Women-AI-Python-course/Btu_Python_Lecture_15/blob/main/user_login_logout.md
-
+- **Override User Model** - https://github.com/BTU-Women-in-AI-Python-course-2025/python_lecture_15/blob/main/Additional%20resources/override_user_model.md
+- **User Registration** - https://github.com/BTU-Women-in-AI-Python-course-2025/python_lecture_15/blob/main/Additional%20resources/user_registration.md
+- **User Login and Logout** - https://github.com/BTU-Women-in-AI-Python-course-2025/python_lecture_15/blob/main/Additional%20resources/user_login_and_log_out.md
  
 ## 📚 Task: Implement Custom User and Authentication
 
