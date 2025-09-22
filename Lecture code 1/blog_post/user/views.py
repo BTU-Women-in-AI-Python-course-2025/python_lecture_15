@@ -1,4 +1,6 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.generic.edit import CreateView
 from user.forms import UserRegistrationForm
@@ -11,6 +13,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 
 
+@method_decorator(user_passes_test(lambda u: not u.is_authenticated, login_url='login'), name='dispatch')
 class UserRegisterView(CreateView):
     model = CustomUser
     form_class = UserRegistrationForm
