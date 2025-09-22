@@ -133,3 +133,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'user.CustomUser'
+
+# LOGIN_REDIRECT_URL = '/blog/class_blog_post_list/'
+# LOGOUT_REDIRECT_URL = '/user/login/'
