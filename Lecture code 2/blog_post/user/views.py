@@ -1,14 +1,19 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
+from django.utils.decorators import method_decorator
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic.edit import CreateView
+
 from user.forms import UserRegistrationForm
 from user.models import CustomUser
 
+
+@method_decorator(user_passes_test(lambda u: not u.is_authenticated, login_url='blog_list'), name='dispatch')
 class UserRegisterView(CreateView):
     model = CustomUser
     form_class = UserRegistrationForm
