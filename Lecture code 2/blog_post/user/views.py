@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
+from django.contrib.auth import logout as auth_logout
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
@@ -31,3 +32,10 @@ class LoginView(View):
             return redirect('class_blog_list')
         messages.error(request, message="Invalid username or password.")
         return render(request, self.template_name, context={'form': form})
+
+
+class LogoutView(View):
+    def get(self, request):
+        auth_logout(request)
+        messages.success(request, "You have been logged out.")
+        return redirect('login')

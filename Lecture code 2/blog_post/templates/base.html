@@ -17,17 +17,24 @@
   <header class="bg-white shadow">
     <div class="max-w-5xl mx-auto px-4 flex justify-between items-center h-16">
       <nav class="space-x-4">
-        <a href="{% url 'blog_list' %}" class="hover:underline">Blog List</a>
-      </nav>
-      <nav class="space-x-4">
-        <a href="{% url 'class_blog_list' %}" class="hover:underline">Class Blog List</a>
-      </nav>
-      <nav class="space-x-4">
-        <a href="{% url 'register' %}" class="hover:underline">Register User</a>
-      </nav>
-      <nav class="space-x-4">
-        <a href="{% url 'login' %}" class="hover:underline">Login</a>
-      </nav>
+          <a href="{% url 'blog_list' %}" class="hover:underline">Blog List</a>
+        </nav>
+        <nav class="space-x-4">
+          <a href="{% url 'class_blog_list' %}" class="hover:underline">Class Blog List</a>
+        </nav>
+
+        {% if user.is_authenticated %}
+          <nav class="space-x-4">
+            <a href="{% url 'logout' %}" class="hover:underline">Logout</a>
+          </nav>
+        {% else %}
+          <nav class="space-x-4">
+            <a href="{% url 'register' %}" class="hover:underline">Register User</a>
+          </nav>
+          <nav class="space-x-4">
+            <a href="{% url 'login' %}" class="hover:underline">Login</a>
+          </nav>
+        {% endif %}
     </div>
   </header>
 
